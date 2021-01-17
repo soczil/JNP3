@@ -27,13 +27,4 @@ public class CameraController : MonoBehaviour
                                                     ref velocity, smoothTime);
         transform.position = smoothPosition;
     }
-
-    // TODO: Zmiana offsetu po naciśnięciu strzałek.
-    public void setOffset(float x, float y, float z)
-    {
-        this.offset.x = x;
-        this.offset.y = y;
-        this.offset.z = z;
-    }
-
 }

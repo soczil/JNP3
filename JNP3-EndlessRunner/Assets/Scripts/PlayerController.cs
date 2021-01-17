@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,6 +25,11 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = true;
     private bool crouch = false;
     private bool facingRight = true;
+    private bool isDead = false;
+
+    public event Action<PlayerController> OnPlayerKilled;
+
+    public Rigidbody2D Rigidbody => rigidbody2d;
 
     void Update()
     {
@@ -109,5 +115,21 @@ public class PlayerController : MonoBehaviour
     {
         facingRight = !facingRight;
         spriteRenderer.flipX = !facingRight;
+    }
+
+    public void Kill()
+    {
+        if (isDead)
+        {
+            return;
+        }
+
+        isDead = true;
+
+        movement = 0f;
+        jump = false;
+        highJump = false;
+
+        OnPlayerKilled?.Invoke(this);
     }
 }
