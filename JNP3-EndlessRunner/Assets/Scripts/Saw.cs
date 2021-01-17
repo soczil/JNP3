@@ -11,7 +11,7 @@ public class Saw : MonoBehaviour
     private float forceModifier = 800f;
 
     [SerializeField]
-    private float speed = 2.05f;
+    private float speed = 2.045f;
 
     private float smoothTime = 0.25f;
     private Vector3 velocity;
