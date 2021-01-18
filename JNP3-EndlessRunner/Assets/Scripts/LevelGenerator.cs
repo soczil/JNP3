@@ -26,7 +26,13 @@ public class LevelGenerator : MonoBehaviour
         firstActiveLevelPartEnd = lastLevelEnd;
     }
 
-    private void Update() {
+    private void Update() 
+    {
+        if (player == null)
+        {
+            return;
+        }
+
         if (Vector3.Distance(player.transform.position, lastLevelEnd) < PLAYER_DISTANCE)
         {
             SpawnLevelPart();

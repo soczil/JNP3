@@ -197,7 +197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ec86bb58ef4428daa75e4b0a8ac182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 10
 --- !u!1 &6478078849759501986
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6478078849759501986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.731, y: 0.6999998, z: 24.343058}
+  m_LocalPosition: {x: 9.731, y: 0.6999998, z: 24.34306}
   m_LocalScale: {x: 10.000439, y: 0.22767742, z: 1}
   m_Children: []
   m_Father: {fileID: 6478078849027250352}
@@ -273,7 +272,7 @@ SpriteShapeRenderer:
   m_SortingOrder: 0
   m_Color: {r: 1, g: 0.15566039, b: 0.15566039, a: 1}
   m_MaskInteraction: 0
-  m_ShapeTexture: {fileID: 0}
+  m_ShapeTexture: {fileID: 2800000, guid: 944b339e9356d4737b4ca1c72673fb91, type: 3}
   m_Sprites: []
   m_LocalAABB:
     m_Center: {x: 0, y: -0.00000023841858, z: 0}
@@ -329,7 +328,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-  m_SpriteShape: {fileID: 0}
+  m_SpriteShape: {fileID: 11400000, guid: 8b26d0461d17044fbaf93e8736c54c4d, type: 2}
   m_FillPixelPerUnit: 100
   m_StretchTiling: 1
   m_SplineDetail: 16
@@ -501,7 +500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ec86bb58ef4428daa75e4b0a8ac182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 10
 --- !u!1 &6478078850872045438
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +631,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ec86bb58ef4428daa75e4b0a8ac182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 10
 --- !u!1 &8354243562944654447
 GameObject:
   m_ObjectHideFlags: 0

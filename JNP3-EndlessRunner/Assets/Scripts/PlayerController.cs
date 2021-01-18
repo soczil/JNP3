@@ -27,8 +27,6 @@ public class PlayerController : MonoBehaviour
     private bool facingRight = true;
     private bool isDead = false;
 
-    public event Action<PlayerController> OnPlayerKilled;
-
     public Rigidbody2D Rigidbody => rigidbody2d;
 
     void Update()
@@ -125,11 +123,11 @@ public class PlayerController : MonoBehaviour
         }
 
         isDead = true;
-
         movement = 0f;
         jump = false;
         highJump = false;
+        Destroy(gameObject);
 
-        OnPlayerKilled?.Invoke(this);
+        GameController.Instance.HandleGameOver();
     }
 }

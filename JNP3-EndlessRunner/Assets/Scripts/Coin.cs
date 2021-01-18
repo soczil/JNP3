@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField]
-    private ulong points = 0;
+    private static ulong points = 1;
 
     public ulong Points
     {
