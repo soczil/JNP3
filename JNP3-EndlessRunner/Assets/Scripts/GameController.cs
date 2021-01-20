@@ -20,12 +20,20 @@ public class GameController : ASingleton<GameController>
 
     [SerializeField]
     private GameObject scoreBar;
+    
+    [SerializeField]
+    private GameObject pauseScreen;
 
     private ulong points = 0;
+    private bool paused = false;
 
     void Update()
     {
         currentScore.text = points.ToString();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Pause();
+        }
     }
 
     public void HandleCoinPickedUp(Coin coin)
@@ -54,5 +62,12 @@ public class GameController : ASingleton<GameController>
     public void ReturnToMainMenu()
     {
         sceneLoader.LoadScene(MENU_SCENE_NAME);
+    }
+
+    private void Pause()
+    {
+        paused = !paused;
+        Time.timeScale = paused ? 0f : 1f;
+        pauseScreen.SetActive(paused);
     }
 }

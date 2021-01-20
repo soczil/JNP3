@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     private bool crouch = false;
     private bool facingRight = true;
     private bool isDead = false;
+    private float fallDelta = 15f;
+    private float deathTreshold = -10f;
 
     public Rigidbody2D Rigidbody => rigidbody2d;
 
@@ -33,6 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         GetInput();
         UpdateAnimator();
+        FallCheck();
     }
 
     private void FixedUpdate() 
@@ -45,6 +48,8 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            deathTreshold = transform.position.y - fallDelta;
+            Debug.Log("DEATH TRESHOLD: " + deathTreshold);
         }
     }
 
@@ -113,6 +118,14 @@ public class PlayerController : MonoBehaviour
     {
         facingRight = !facingRight;
         spriteRenderer.flipX = !facingRight;
+    }
+
+    private void FallCheck()
+    {
+        if (transform.position.y <= deathTreshold)
+        {
+            Kill();
+        }
     }
 
     public void Kill()
